@@ -23,7 +23,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
       - name: Instalar dependencias de Python
-        run: pip install numpy matplotlib ipython nbformat nbclient ipykernel
+        run: pip install -r requirements.txt
 
       - name: Ejecutar todos los notebooks
         run: python3 tools/run_notebooks.py

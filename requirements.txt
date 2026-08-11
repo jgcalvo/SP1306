@@ -1,0 +1,9 @@
+# Para correr los notebooks fuera de Colab (Colab ya trae todo esto).
+numpy
+matplotlib
+ipython
+
+# Solo para tools/run_notebooks.py
+nbformat
+nbclient
+ipykernel
