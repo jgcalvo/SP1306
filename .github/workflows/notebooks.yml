@@ -1,0 +1,29 @@
+name: Ejecutar notebooks
+
+# Corre los notebooks en cada push para verificar que no se rompieron.
+# No reemplaza a Colab: es solo un chequeo automatico, sin salida interactiva.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  ejecutar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Instalar dependencias de Python
+        run: pip install numpy matplotlib ipython nbformat nbclient ipykernel
+
+      - name: Ejecutar todos los notebooks
+        run: python3 tools/run_notebooks.py
