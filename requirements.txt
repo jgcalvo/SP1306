@@ -1,5 +1,6 @@
 # Para correr los notebooks fuera de Colab (Colab ya trae todo esto).
 numpy
+scipy
 matplotlib
 ipython
 
