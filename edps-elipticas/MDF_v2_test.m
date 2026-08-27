@@ -31,8 +31,7 @@
 %
 % Este conteo vale para condiciones de frontera HOMOGENEAS, que es el caso de
 % este archivo: los vecinos que caen sobre la frontera valen 0 y simplemente no
-% generan entrada. Con condiciones no homogeneas la matriz seria la misma, pero
-% habria que restar el valor de frontera al lado derecho b.
+% generan entrada.
 
 % entradas
 uex = @(x,y) sin(2*pi*x).*sin(pi*y);        % sol. exacta
