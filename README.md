@@ -26,6 +26,12 @@ Kronecker del laplaciano 1D.
 
 ## Método de elemento finito
 
-_Pendiente._
+Elementos finitos lineales (P1) para el mismo problema, sobre una triangulación del
+cuadrado. La `v1` recorre los elementos uno por uno y usa una matriz llena; la `v2`
+arma la matriz rala de forma vectorizada, siguiendo `assembling.m` de las notas.
+
+| Tema | MATLAB | Colab |
+|---|---|---|
+| MEF P1: solución y convergencia | [`v1`](edps-elipticas/MEF_v1.m) · [`v2`](edps-elipticas/MEF_v2.m) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jgcalvo/SP1306/blob/main/edps-elipticas/MEF.ipynb) |
 
 ---
