@@ -33,9 +33,7 @@
 %   Un detalle que conviene no pasar por alto: en elementos finitos el metodo
 %   "explicito" TAMBIEN pide resolver un sistema en cada paso, porque la matriz
 %   de masa M no es diagonal. Lo explicito es el tratamiento del operador
-%   espacial, no el costo del paso. (La forma usual de volverlo genuinamente
-%   explicito es condensar la masa, reemplazando M por la diagonal de las sumas
-%   de sus filas; no se hace aqui.)
+%   espacial, no el costo del paso.
 %
 %   En los dos casos la matriz que hay que invertir -- M + dt A en uno, M en el
 %   otro -- NO cambia de un paso al otro, porque ni la malla ni dt dependen del
@@ -54,11 +52,6 @@
 %   El explicito no. Para P1 en una malla uniforme se puede calcular
 %
 %       lambda_max  ->  12/h^2      de donde      dt* = 2/lambda_max = h^2/6
-%
-%   Ojo con ese 6: la condicion h^2/2 que uno recuerda de diferencias finitas
-%   corresponde a lambda_max = 4/h^2, que es lo que se obtiene con la masa
-%   condensada. La masa consistente de elementos finitos es tres veces mas
-%   restrictiva. La seccion 5 verifica el umbral numericamente.
 %
 %   ENSAMBLAJE.  La funcion local ensamblar1D es la version en una dimension de
 %   assembling.m: misma estructura de tripletes y mismo ciclo sobre los pares de
@@ -187,7 +180,7 @@ fprintf('El error implicito no es monotono: el error temporal y el espacial\n');
 fprintf('tienen signos opuestos y se cancelan cerca de dt = 1e-4.\n');
 fprintf('Donde el explicito es estable, los dos dan practicamente lo mismo:\n');
 fprintf('son el mismo metodo de orden 1, y no hay razon para pagar la\n');
-fprintf('restriccion sobre dt salvo que M este condensada.\n');
+fprintf('restriccion sobre dt.\n');
 
 %% --- 6. Estabilidad incondicional del implicito -----------------------
 %  Un solo paso que cubre todo el intervalo de tiempo. El explicito explotaria

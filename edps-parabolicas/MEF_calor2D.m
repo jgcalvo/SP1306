@@ -39,9 +39,7 @@
 %
 %   El metodo "explicito" TAMBIEN pide resolver un sistema en cada paso, porque
 %   M no es diagonal. Lo explicito es el tratamiento del operador espacial, no
-%   el costo del paso. (La forma usual de volverlo genuinamente explicito es
-%   condensar la masa; no se hace aqui, pero mas abajo se dice cuanto cambia la
-%   estabilidad.)
+%   el costo del paso.
 %
 %   En los tres casos la matriz de la izquierda NO cambia de un paso al otro.
 %   Se factoriza UNA sola vez, fuera del ciclo, y cada paso es solo una
@@ -69,10 +67,8 @@
 %
 %       lambda_max -> 25.856/h^2        de donde      dt* -> h^2/12.93
 %
-%   y con la masa condensada seria lambda_max -> 8/h^2, o sea dt* = h^2/4. La
-%   masa consistente es unas 3.2 veces mas restrictiva, el mismo fenomeno que
-%   en 1D (donde el factor era exactamente 3). Como no hay formula general para
-%   mallas arbitrarias, dtCritico calcula lambda_max con eigs.
+%   Como no hay formula general para mallas arbitrarias, dtCritico calcula
+%   lambda_max con eigs.
 %
 %   Del otro lado del espectro, lambda_min -> 2*pi^2, que es la tasa de
 %   decaimiento exacta del dato inicial que se usa aqui.
@@ -278,8 +274,7 @@ dtcE = dtCritico(nodeE,elemE,0);
 he   = 1/ne;
 ueE  = uex(nodeE(:,1),nodeE(:,2),T);
 fprintf('\n===== ESTABILIDAD  (n = %d, h = %.4f) =====\n', ne, he);
-fprintf('dt* = 2/lambda_max = %.3e   (h^2/12.93 = %.3e, condensada h^2/4 = %.3e)\n', ...
-    dtcE, he^2/12.93, he^2/4);
+fprintf('dt* = 2/lambda_max = %.3e   (h^2/12.93 = %.3e)\n', dtcE, he^2/12.93);
 fprintf('   pasos      dt      dt/dt*    err atras     err CN     err adelante\n');
 for ns = [50 100 200 1000]
     dtk = T/ns;
