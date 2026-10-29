@@ -34,4 +34,16 @@ arma la matriz rala de forma vectorizada, siguiendo `assembling.m` de las notas.
 |---|---|---|
 | MEF P1: solución y convergencia | [`v1`](edps-elipticas/MEF_v1.m) · [`v2`](edps-elipticas/MEF_v2.m) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jgcalvo/SP1306/blob/main/edps-elipticas/MEF.ipynb) |
 
+## EDPs parabólicas
+
+Ecuación del calor con elementos P1 en el espacio. Aquí aparecen las dos matrices
+del ensamblaje: la de masa, del término temporal, y la de rigidez, del espacial.
+Para avanzar en el tiempo se usa el método $\theta$, que con $\theta = 0, 1, 1/2$
+da Euler hacia adelante, Euler hacia atrás y Crank–Nicolson.
+
+| Tema | MATLAB |
+|---|---|
+| Calor 1D: Euler implícito y explícito | [`.m`](edps-parabolicas/MEF_calor1D.m) |
+| Calor 2D: método $\theta$ y errores en $\Delta t$, $h$ | [`.m`](edps-parabolicas/MEF_calor2D.m) |
+
 ---
