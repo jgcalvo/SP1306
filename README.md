@@ -46,4 +46,23 @@ da Euler hacia adelante, Euler hacia atrás y Crank–Nicolson.
 | Calor 1D: Euler implícito y explícito | [`.m`](edps-parabolicas/MEF_calor1D.m) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jgcalvo/SP1306/blob/main/edps-parabolicas/MEF_calor1D.ipynb) |
 | Calor 2D: método $\theta$ y errores en $\Delta t$, $h$ | [`.m`](edps-parabolicas/MEF_calor2D.m) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jgcalvo/SP1306/blob/main/edps-parabolicas/MEF_calor2D.ipynb) |
 
+## EDPs hiperbólicas
+
+Ecuación de onda en una dimensión, resuelta en forma cerrada: d'Alembert en toda
+la recta, y el método de reflexión cuando el dominio espacial se restringe. Lo
+que se ve en las animaciones es qué le pasa a un pulso al llegar al extremo, que
+depende solo del coeficiente de reflexión $r = (1-\lambda c)/(1+\lambda c)$:
+Neumann lo devuelve sin invertir ($r = 1$), Dirichlet lo invierte ($r = -1$), y
+la condición absorbente $\lambda = 1/c$ lo deja salir sin reflejar ($r = 0$).
+
+Cada script escribe sus salidas (PDF o MP4) en el directorio desde el que se
+corre. Todavía no hay traducción a notebook.
+
+| Tema | MATLAB |
+|---|---|
+| Figuras: reflexión, periodicidad y cuerda pulsada | [`.m`](edps-hiperbolicas/onda1d_figuras.m) |
+| Video: reflexión en $x=0$, Dirichlet contra Neumann | [`.m`](edps-hiperbolicas/onda1d_video.m) |
+| Video: condición de Robin y frontera absorbente | [`.m`](edps-hiperbolicas/onda1d_video_robin.m) |
+| Video: la cuerda pulsada y sus modos | [`.m`](edps-hiperbolicas/onda1d_video_cuerda.m) |
+
 ---

@@ -3,6 +3,7 @@
 *.avi
 *.gif
 *.png
+*.pdf
 
 # Python
 __pycache__/
