@@ -55,14 +55,19 @@ depende solo del coeficiente de reflexión $r = (1-\lambda c)/(1+\lambda c)$:
 Neumann lo devuelve sin invertir ($r = 1$), Dirichlet lo invierte ($r = -1$), y
 la condición absorbente $\lambda = 1/c$ lo deja salir sin reflejar ($r = 0$).
 
-Cada script escribe sus salidas (PDF o MP4) en el directorio desde el que se
-corre. Todavía no hay traducción a notebook.
+En dos dimensiones aparece además el elemento finito: la semidiscretización en espacio deja
+el sistema $M\bm{U}''+A\bm{U}=\bm{F}$, y lo que queda por decidir es cómo avanzar en el
+tiempo. Los tres métodos usuales --- diferencias centradas, Crank--Nicolson y Newmark-$\beta$
+--- son en realidad tres puntos de una misma familia de dos parámetros.
 
-| Tema | MATLAB |
-|---|---|
-| Figuras: reflexión, periodicidad y cuerda pulsada | [`.m`](edps-hiperbolicas/onda1d_figuras.m) |
-| Video: reflexión en $x=0$, Dirichlet contra Neumann | [`.m`](edps-hiperbolicas/onda1d_video.m) |
-| Video: condición de Robin y frontera absorbente | [`.m`](edps-hiperbolicas/onda1d_video_robin.m) |
-| Video: la cuerda pulsada y sus modos | [`.m`](edps-hiperbolicas/onda1d_video_cuerda.m) |
+Los scripts de 1D escriben sus salidas (PDF o MP4) en el directorio desde el que se corren.
+
+| Tema | MATLAB | Colab |
+|---|---|---|
+| Onda 2D: $P_1$ en espacio, tres métodos en el tiempo y la CFL | [`.m`](edps-hiperbolicas/demo_onda2d.m) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jgcalvo/SP1306/blob/main/edps-hiperbolicas/demo_onda2d.ipynb) |
+| Figuras: reflexión, periodicidad y cuerda pulsada | [`.m`](edps-hiperbolicas/onda1d_figuras.m) | |
+| Video: reflexión en $x=0$, Dirichlet contra Neumann | [`.m`](edps-hiperbolicas/onda1d_video.m) | |
+| Video: condición de Robin y frontera absorbente | [`.m`](edps-hiperbolicas/onda1d_video_robin.m) | |
+| Video: la cuerda pulsada y sus modos | [`.m`](edps-hiperbolicas/onda1d_video_cuerda.m) | |
 
 ---
